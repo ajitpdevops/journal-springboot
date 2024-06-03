@@ -12,7 +12,7 @@ import com.revelara.journal_app.repository.JournalEntryRepository;
 
 @Component
 public class JournalEntryService {
-    
+
     @Autowired
     private JournalEntryRepository journalEntryRepository;
 
@@ -32,6 +32,5 @@ public class JournalEntryService {
     public void deleteEntryById(ObjectId id) {
         journalEntryRepository.deleteById(id.toString());
     }
-
 
 }
