@@ -1,0 +1,21 @@
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo_db
+    ports:
+      - 27017:27017
+    volumes:
+      - journal-db:/data
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=adminpass@123
+    networks:
+      - journal-net
+    restart: unless-stopped
+
+networks:
+  journal-net:
+    driver: bridge
+
+volumes:
+  journal-db:
